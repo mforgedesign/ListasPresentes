@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generatedAt": "2026-01-17T21:02:08.052Z",
+  "generatedAt": "2026-01-17T21:19:06.746Z",
   "config": {
     "titleName": "Daniele & Robson",
     "subtitle": "Lista de Presentes de Casamento",
@@ -12,7 +12,7 @@
       "button": "#ff9494"
     },
     "fonts": {
-      "title": "'Cormorant Garamond', serif",
+      "title": "'Great Vibes', cursive",
       "body": "'Montserrat', sans-serif"
     },
     "backgroundOpacity": 100,
