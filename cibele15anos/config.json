@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generatedAt": "2026-02-09T13:45:23.123Z",
+  "generatedAt": "2026-02-09T14:40:37.007Z",
   "config": {
     "titleName": "Cibele 15 Anos",
     "subtitle": "Lista de Presentes",
@@ -11,13 +11,15 @@
       "accent": "#adcadb",
       "button": "#000e75"
     },
-    "pixKey": "045.582.092-90",
-    "thankYouMessage": "Obrigado por fazer parte desse momento especial!",
-    "backgroundImage": null,
     "fonts": {
       "title": "'Cormorant Garamond', serif",
       "body": "'Montserrat', sans-serif"
-    }
+    },
+    "backgroundOpacity": 100,
+    "pixKey": "045.582.092-90",
+    "thankYouMessage": "Obrigado por fazer parte desse momento especial!",
+    "noticeMessage": "Preparei abaixo a lista de presentes que eu gostaria de ganhar! Você pode contribuir via Pix com o valor de um dos itens ou, se preferir, comprar e entregar pessoalmente!",
+    "backgroundImage": null
   },
   "products": [
     {
