@@ -1,9 +1,9 @@
 {
   "version": "1.0",
-  "generatedAt": "2026-04-06T16:19:38.837Z",
+  "generatedAt": "2026-04-06T18:49:43.675Z",
   "config": {
     "titleName": "Ághata",
-    "subtitle": "14 Anos",
+    "subtitle": "15 Anos",
     "slug": "aghata15anos",
     "colors": {
       "background": "#ffffff",
@@ -11,14 +11,15 @@
       "accent": "#c9a959",
       "button": "#bf6983"
     },
-    "pixKey": "",
-    "thankYouMessage": "Obrigado por fazer parte desse momento especial!",
-    "noticeMessage": "Atenção! Não é necessário comprar e trazer o presente. Basta escolher um item e fazer o PIX do valor correspondente. Sua contribuição será muito especial!",
-    "backgroundImage": null,
     "fonts": {
       "title": "'Cormorant Garamond', serif",
       "body": "'Montserrat', sans-serif"
-    }
+    },
+    "backgroundOpacity": 100,
+    "pixKey": "",
+    "thankYouMessage": "Obrigado por fazer parte desse momento especial!",
+    "noticeMessage": "Atenção! Não é necessário comprar e trazer o presente. Basta escolher um item e fazer o PIX do valor correspondente. Sua contribuição será muito especial!",
+    "backgroundImage": null
   },
   "products": [
     {
