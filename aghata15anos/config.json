@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generatedAt": "2026-04-06T18:49:43.675Z",
+  "generatedAt": "2026-04-06T18:51:10.613Z",
   "config": {
     "titleName": "Ághata",
     "subtitle": "15 Anos",
@@ -16,7 +16,7 @@
       "body": "'Montserrat', sans-serif"
     },
     "backgroundOpacity": 100,
-    "pixKey": "",
+    "pixKey": "18670002701",
     "thankYouMessage": "Obrigado por fazer parte desse momento especial!",
     "noticeMessage": "Atenção! Não é necessário comprar e trazer o presente. Basta escolher um item e fazer o PIX do valor correspondente. Sua contribuição será muito especial!",
     "backgroundImage": null
