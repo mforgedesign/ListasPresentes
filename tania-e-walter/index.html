@@ -846,7 +846,7 @@
                 })
                 .catch(function(err) {
                     console.error('Erro ao carregar presentes:', err);
-                    container.innerHTML = '<div class="error-container"><i class="fas fa-exclamation-triangle"></i><h3>Erro de conexão</h3><p>Não foi possível conectar ao servidor. Verifique sua conexão e tente novamente.</p><button class="btn-retry" onclick="loadGifts()"><i class="fas fa-redo"></i> Tentar novamente</button></div>';
+                    container.innerHTML = '<div class="error-container"><i class="fas fa-exclamation-triangle"></i><h3>Erro de conexão (CORS)</h3><p>Não foi possível conectar ao Google Planilhas. Isso ocorre por conta das configurações de permissão no Google Apps Script.</p><div style="font-size:0.8rem;color:#e5e7eb;margin:1rem 0;text-align:left;background:#1e293b;padding:0.75rem;border-radius:6px;border:1px solid #334155;"><strong style="color:#ef4444;">Como corrigir no Apps Script:</strong><ol style="margin:0.5rem 0 0 1.2rem;padding:0;"><li>No editor do Apps Script, clique em <strong>Implantar > Nova implantação</strong></li><li>Em "Executar como", selecione <strong>Eu (seu-email@gmail.com)</strong></li><li>Em "Quem tem acesso", selecione <strong>Qualquer pessoa</strong></li><li>Clique em Implantar e autorize as permissões de acesso do Google.</li></ol></div><button class="btn-retry" onclick="loadGifts()"><i class="fas fa-redo"></i> Tentar novamente</button></div>';
                 });
         }
 
@@ -949,13 +949,13 @@
                     }
 
                     // Ainda disponível: fazer POST
+                    var params = new URLSearchParams();
+                    params.append('id', selectedGift.id);
+                    params.append('guestName', guestName);
+
                     return fetch(GOOGLE_SCRIPT_URL, {
                         method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            id: selectedGift.id,
-                            guestName: guestName
-                        })
+                        body: params
                     })
                     .then(function(response) { return response.json(); })
                     .then(function(result) {
