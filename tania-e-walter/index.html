@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Presentes - Tânia e Valter | Casamento</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Dancing+Script:wght@700&family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;700&family=Lora:wght@400;700&family=Great+Vibes&family=Open+Sans:wght@400&family=Roboto:wght@400&family=Lato:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ============================================
+           LISTA DE PRESENTES V2 - Tânia e Valter
+           CSS Inline - Gerado automaticamente
+        ============================================ */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-background: #ffffff;
+            --color-title: #1a1a1a;
+            --color-accent: #c9a959;
+            --color-button: #1a1a1a;
+            --color-text: #333333;
+            --color-text-light: #666666;
+            --color-white: #FFFFFF;
+            --color-gray-light: rgba(255, 255, 255, 0.95);
+            --color-overlay: rgba(0, 0, 0, 0.7);
+            --color-success: #27ae60;
+            --color-danger: #e74c3c;
+
+            --font-title: 'Cormorant Garamond', serif;
+            --font-body: 'Montserrat', sans-serif;
+
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+
+            --border-radius: 12px;
+            --border-radius-sm: 6px;
+            --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
+            --shadow-modal: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        body {
+            font-family: var(--font-body);
+            min-height: 100vh;
+            background-color: var(--color-background);
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: none;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: var(--spacing-lg);
+            min-height: 100vh;
+        }
+
+        /* --- HEADER --- */
+        .header {
+            text-align: center;
+            padding: var(--spacing-xl) var(--spacing-sm) var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .title {
+            font-family: var(--font-title);
+            font-size: 3.5rem;
+            font-weight: 600;
+            color: var(--color-title);
+            line-height: 1.2;
+            margin-bottom: var(--spacing-xs);
+            letter-spacing: 0.02em;
+        }
+
+        .subtitle {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: var(--color-accent);
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-top: var(--spacing-sm);
+        }
+
+        .notice {
+            background: var(--color-white);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+            border-left: 3px solid var(--color-accent);
+            box-shadow: var(--shadow-card);
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-sm);
+        }
+
+        .notice i {
+            font-size: 1.2rem;
+            color: var(--color-accent);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .notice p {
+            font-size: 0.9rem;
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+
+        /* --- LOADING SPINNER --- */
+        .loading-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 1rem;
+            gap: 1.5rem;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(0, 0, 0, 0.1);
+            border-top-color: var(--color-accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            font-size: 1rem;
+            color: var(--color-text-light);
+            font-weight: 500;
+        }
+
+        /* --- GIFTS SECTION --- */
+        .gifts-section {
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .section-title {
+            font-family: var(--font-title);
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--color-title);
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-sm);
+        }
+
+        .section-title i {
+            color: var(--color-accent);
+            font-size: 1.2rem;
+        }
+
+        .gifts-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-md);
+        }
+
+        /* --- GIFT CARD --- */
+        .gift-card {
+            background: var(--color-white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            animation: fadeInUp 0.5s ease both;
+        }
+
+        .gift-card:nth-child(1) { animation-delay: 0.05s; }
+        .gift-card:nth-child(2) { animation-delay: 0.1s; }
+        .gift-card:nth-child(3) { animation-delay: 0.15s; }
+        .gift-card:nth-child(4) { animation-delay: 0.2s; }
+        .gift-card:nth-child(5) { animation-delay: 0.25s; }
+        .gift-card:nth-child(6) { animation-delay: 0.3s; }
+        .gift-card:nth-child(7) { animation-delay: 0.35s; }
+        .gift-card:nth-child(8) { animation-delay: 0.4s; }
+        .gift-card:nth-child(9) { animation-delay: 0.45s; }
+        .gift-card:nth-child(10) { animation-delay: 0.5s; }
+        .gift-card:nth-child(11) { animation-delay: 0.55s; }
+        .gift-card:nth-child(12) { animation-delay: 0.6s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .gift-card.available {
+            cursor: pointer;
+        }
+
+        .gift-card.available:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .gift-card.available:active {
+            transform: scale(0.98);
+        }
+
+        .gift-card.chosen {
+            opacity: 0.55;
+            filter: grayscale(30%);
+        }
+
+        .gift-card.chosen:hover {
+            transform: none;
+            box-shadow: var(--shadow-card);
+        }
+
+        /* Efeito shimmer nos cards disponíveis */
+        .gift-card.available::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .gift-card.available:hover::before {
+            left: 100%;
+        }
+
+        .gift-image {
+            width: 100%;
+            aspect-ratio: 1;
+            overflow: hidden;
+            background: #ffffff;
+        }
+
+        .gift-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .gift-card.available:hover .gift-image img {
+            transform: scale(1.05);
+        }
+
+        .gift-info {
+            padding: var(--spacing-sm);
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .gift-info h3 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--color-title);
+            margin: 0.1rem 0 0.15rem 0;
+            line-height: 1.2;
+        }
+
+        .gift-info .brand {
+            font-size: 0.75rem;
+            color: #888;
+        }
+
+        .gift-btn {
+            width: 100%;
+            padding: 0.5rem var(--spacing-xs);
+            border: none;
+            background: var(--color-button);
+            color: var(--color-white);
+            font-family: var(--font-body);
+            font-size: 0.78rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+        }
+
+        .gift-btn:hover {
+            filter: brightness(1.1);
+        }
+
+        .gift-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        .gift-btn.chosen-btn {
+            background: #999;
+            cursor: default;
+        }
+
+        .gift-btn:hover i {
+            animation: heartPulse 0.6s ease infinite;
+        }
+
+        .gift-btn:disabled:hover i {
+            animation: none;
+        }
+
+        @keyframes heartPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        /* --- MODAL DE SELEÇÃO --- */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--color-overlay);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-sm);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--color-white);
+            border-radius: var(--border-radius);
+            width: 100%;
+            max-width: 420px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: var(--shadow-modal);
+            animation: modalSlideIn 0.3s ease;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .modal-header {
+            background: var(--color-button);
+            padding: var(--spacing-lg);
+            text-align: center;
+            color: var(--color-white);
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .modal-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .modal-header h2 {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .modal-body {
+            padding: var(--spacing-lg);
+        }
+
+        .modal-gift-preview {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .modal-gift-preview img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            background-color: #ffffff;
+            border-radius: var(--border-radius-sm);
+            box-shadow: var(--shadow-card);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .modal-gift-preview h3 {
+            font-size: 1.1rem;
+            color: var(--color-title);
+            font-weight: 600;
+        }
+
+        .modal-input-group {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .modal-input-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--color-title);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .modal-input-group input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: var(--border-radius-sm);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            outline: none;
+        }
+
+        .modal-input-group input:focus {
+            border-color: var(--color-accent);
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: var(--spacing-sm);
+        }
+
+        .btn-confirm {
+            flex: 1;
+            padding: 0.8rem;
+            border: none;
+            border-radius: var(--border-radius-sm);
+            background: var(--color-button);
+            color: var(--color-white);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-confirm:hover {
+            filter: brightness(1.1);
+            transform: translateY(-1px);
+        }
+
+        .btn-confirm:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-cancel {
+            padding: 0.8rem 1.2rem;
+            border: 2px solid #e0e0e0;
+            border-radius: var(--border-radius-sm);
+            background: transparent;
+            color: var(--color-text-light);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-cancel:hover {
+            border-color: var(--color-text-light);
+            background: #f5f5f5;
+        }
+
+        /* --- MODAL DE SUCESSO --- */
+        .success-content {
+            text-align: center;
+            padding: var(--spacing-xl);
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            color: var(--color-success);
+            margin-bottom: var(--spacing-md);
+            animation: successBounce 0.6s ease;
+        }
+
+        @keyframes successBounce {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .success-content h2 {
+            font-size: 1.3rem;
+            color: var(--color-title);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .success-content p {
+            font-size: 0.95rem;
+            color: var(--color-text-light);
+            line-height: 1.6;
+        }
+
+        .btn-success-close {
+            margin-top: var(--spacing-lg);
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: var(--border-radius-sm);
+            background: var(--color-button);
+            color: var(--color-white);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-success-close:hover {
+            filter: brightness(1.1);
+        }
+
+        /* --- MODAL DE RACE CONDITION (Alguém foi mais rápido) --- */
+        .race-content {
+            text-align: center;
+            padding: var(--spacing-xl);
+        }
+
+        .race-icon {
+            font-size: 3.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .race-content h2 {
+            font-size: 1.2rem;
+            color: var(--color-title);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .race-content p {
+            font-size: 0.95rem;
+            color: var(--color-text-light);
+            line-height: 1.6;
+        }
+
+        /* --- FOOTER --- */
+        .footer {
+            text-align: center;
+            padding: var(--spacing-xl) var(--spacing-sm);
+            color: var(--color-text-light);
+        }
+
+        .footer p {
+            font-size: 0.9rem;
+        }
+
+        /* --- ERROR STATE --- */
+        .error-container {
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+
+        .error-container i {
+            font-size: 3rem;
+            color: var(--color-danger);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .error-container h3 {
+            font-size: 1.2rem;
+            color: var(--color-title);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .error-container p {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+        }
+
+        .btn-retry {
+            margin-top: var(--spacing-lg);
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: var(--border-radius-sm);
+            background: var(--color-button);
+            color: var(--color-white);
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-retry:hover {
+            filter: brightness(1.1);
+        }
+
+        /* --- TOAST --- */
+        .toast-container {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .toast-msg {
+            background: var(--color-button);
+            color: var(--color-white);
+            padding: 0.8rem 1.2rem;
+            border-radius: var(--border-radius-sm);
+            font-size: 0.9rem;
+            box-shadow: var(--shadow-card);
+            animation: toastIn 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        @keyframes toastIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (min-width: 480px) {
+            .container {
+                padding: var(--spacing-md);
+            }
+
+            .title {
+                font-size: 4rem;
+            }
+
+            .gifts-grid {
+                gap: var(--spacing-md);
+            }
+
+            .gift-info h3 {
+                font-size: 1rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 750px;
+                padding: var(--spacing-lg);
+            }
+
+            .title {
+                font-size: 4.5rem;
+            }
+
+            .gifts-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <header class="header">
+            <h1 class="title">Tânia e Valter</h1>
+            <p class="subtitle">Casamento</p>
+
+            <div class="notice">
+                <i class="fas fa-info-circle"></i>
+                <p>Escolha os presentes que deseja dar. Cada presente só pode ser escolhido por um convidado! 🎁</p>
+            </div>
+        </header>
+
+        <section class="gifts-section">
+            <h2 class="section-title">
+                <i class="fas fa-gift"></i> Escolha um Presente
+            </h2>
+
+            <!-- Container dinâmico: loading, grid ou erro -->
+            <div id="giftsContainer">
+                <div class="loading-container">
+                    <div class="spinner"></div>
+                    <p class="loading-text">Carregando presentes...</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>Feito com 💝 para Tânia e Valter</p>
+        </footer>
+    </div>
+
+    <!-- Modal de Seleção de Presente -->
+    <div id="selectModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fas fa-gift modal-icon"></i>
+                <h2>Confirmar Presente</h2>
+            </div>
+            <div class="modal-body">
+                <div class="modal-gift-preview">
+                    <img id="modalGiftImage" src="" alt="Presente">
+                    <h3 id="modalGiftName"></h3>
+                </div>
+                <div class="modal-input-group">
+                    <label for="guestNameInput">Seu Nome e Sobrenome</label>
+                    <input type="text" id="guestNameInput" placeholder="Ex: Maria Silva" autocomplete="name">
+                </div>
+                <div class="modal-actions">
+                    <button class="btn-confirm" id="btnConfirmGift" onclick="confirmGift()">
+                        <i class="fas fa-check"></i> Confirmar
+                    </button>
+                    <button class="btn-cancel" onclick="closeSelectModal()">
+                        Cancelar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Sucesso -->
+    <div id="successModalGuest" class="modal-overlay">
+        <div class="modal-content">
+            <div class="success-content">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Presente Confirmado!</h2>
+                <p>Obrigado por escolher um presente! Sua presença é o melhor presente! 💝</p>
+                <button class="btn-success-close" onclick="closeSuccessModalGuest()">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Race Condition -->
+    <div id="raceModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="race-content">
+                <div class="race-icon">😅</div>
+                <h2>Ops! Presente já escolhido</h2>
+                <p>Parece que alguém foi mais rápido e acabou escolhendo o mesmo presente que você! 😅</p>
+                <p style="margin-top: 0.5rem;">Mas não se preocupe, há outros presentes incríveis esperando por você!</p>
+                <button class="btn-success-close" onclick="closeRaceModal()">Escolher outro presente</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script>
+        // ==========================================
+        // LISTA DE PRESENTES V2 - JAVASCRIPT INLINE
+        // Sincronização com Google Sheets via Apps Script
+        // ==========================================
+
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxTERTm-J9RP6aBvOxodZht-qMKEHq7--M88ocDJdIUO-O_KuLBMd3v8EE5FXktfwxbMg/exec';
+
+        let giftsData = [];
+        let selectedGift = null;
+
+        // --- Inicialização ---
+        document.addEventListener('DOMContentLoaded', function() {
+            loadGifts();
+
+            // Enter no input de nome confirma o presente
+            document.getElementById('guestNameInput').addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') {
+                    confirmGift();
+                }
+            });
+
+            // Escape fecha modais
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeSelectModal();
+                    closeSuccessModalGuest();
+                    closeRaceModal();
+                }
+            });
+        });
+
+        // --- Carregar presentes do Google Sheets ---
+        function loadGifts() {
+            var container = document.getElementById('giftsContainer');
+            container.innerHTML = '<div class="loading-container"><div class="spinner"></div><p class="loading-text">Carregando presentes...</p></div>';
+
+            if (!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL === 'SUA_URL_AQUI') {
+                container.innerHTML = '<div class="error-container"><i class="fas fa-exclamation-triangle"></i><h3>URL não configurada</h3><p>O organizador ainda não configurou a sincronização com o Google Sheets.</p></div>';
+                return;
+            }
+
+            fetch(GOOGLE_SCRIPT_URL)
+                .then(function(response) { return response.json(); })
+                .then(function(data) {
+                    if (data.success && data.items) {
+                        giftsData = data.items;
+                        renderGifts();
+                    } else {
+                        container.innerHTML = '<div class="error-container"><i class="fas fa-exclamation-triangle"></i><h3>Erro ao carregar</h3><p>Não foi possível carregar os presentes. Tente novamente.</p><button class="btn-retry" onclick="loadGifts()"><i class="fas fa-redo"></i> Tentar novamente</button></div>';
+                    }
+                })
+                .catch(function(err) {
+                    console.error('Erro ao carregar presentes:', err);
+                    container.innerHTML = '<div class="error-container"><i class="fas fa-exclamation-triangle"></i><h3>Erro de conexão</h3><p>Não foi possível conectar ao servidor. Verifique sua conexão e tente novamente.</p><button class="btn-retry" onclick="loadGifts()"><i class="fas fa-redo"></i> Tentar novamente</button></div>';
+                });
+        }
+
+        // --- Renderizar cards de presentes ---
+        function renderGifts() {
+            var container = document.getElementById('giftsContainer');
+
+            if (!giftsData || giftsData.length === 0) {
+                container.innerHTML = '<div class="error-container"><i class="fas fa-box-open"></i><h3>Nenhum presente cadastrado</h3><p>A lista de presentes ainda está sendo preparada.</p></div>';
+                return;
+            }
+
+            var html = '<div class="gifts-grid">';
+
+            giftsData.forEach(function(gift, index) {
+                var isChosen = (gift.status === 'Escolhido');
+                var cardClass = isChosen ? 'gift-card chosen' : 'gift-card available';
+                var fallbackImg = 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=300&h=300&fit=crop';
+
+                html += '<div class="' + cardClass + '" data-gift-id="' + gift.id + '"' +
+                    (!isChosen ? ' onclick="selectGift(\'' + String(gift.id).replace(/'/g, "\\'") + '\')"' : '') + '>';
+                html += '<div class="gift-image">';
+                html += '<img src="' + (gift.image || fallbackImg) + '" alt="' + gift.name + '" onerror="this.src=\'' + fallbackImg + '\'">';
+                html += '</div>';
+                html += '<div class="gift-info">';
+                html += '<h3>' + gift.name + '</h3>';
+                html += '</div>';
+                html += '<button class="gift-btn' + (isChosen ? ' chosen-btn' : '') + '"' + (isChosen ? ' disabled' : '') + '>';
+                html += isChosen ? '✓ Já presenteado' : '🎁 Dar este presente';
+                html += '</button>';
+                html += '</div>';
+            });
+
+            html += '</div>';
+            container.innerHTML = html;
+        }
+
+        // --- Selecionar presente (abre modal) ---
+        function selectGift(giftId) {
+            var gift = giftsData.find(function(g) { return String(g.id) === String(giftId); });
+            if (!gift || gift.status === 'Escolhido') return;
+
+            selectedGift = gift;
+
+            var fallbackImg = 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=300&h=300&fit=crop';
+            document.getElementById('modalGiftImage').src = gift.image || fallbackImg;
+            document.getElementById('modalGiftName').textContent = gift.name;
+            document.getElementById('guestNameInput').value = '';
+            document.getElementById('btnConfirmGift').disabled = false;
+            document.getElementById('btnConfirmGift').innerHTML = '<i class="fas fa-check"></i> Confirmar';
+
+            document.getElementById('selectModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            // Focar no campo de nome
+            setTimeout(function() {
+                document.getElementById('guestNameInput').focus();
+            }, 300);
+        }
+
+        // --- Confirmar presente com tratamento de race condition ---
+        function confirmGift() {
+            var guestName = document.getElementById('guestNameInput').value.trim();
+
+            if (!guestName) {
+                showPageToast('Por favor, informe seu nome e sobrenome.');
+                document.getElementById('guestNameInput').focus();
+                return;
+            }
+
+            if (!selectedGift) return;
+
+            var btn = document.getElementById('btnConfirmGift');
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processando...';
+
+            // RACE CONDITION: Antes de POST, fazer GET para verificar se ainda está disponível
+            fetch(GOOGLE_SCRIPT_URL)
+                .then(function(response) { return response.json(); })
+                .then(function(data) {
+                    if (!data.success || !data.items) {
+                        throw new Error('Erro ao verificar disponibilidade');
+                    }
+
+                    var freshGift = data.items.find(function(g) {
+                        return String(g.id) === String(selectedGift.id);
+                    });
+
+                    if (!freshGift) {
+                        throw new Error('Presente não encontrado');
+                    }
+
+                    if (freshGift.status === 'Escolhido') {
+                        // Alguém foi mais rápido!
+                        closeSelectModal();
+                        giftsData = data.items;
+                        renderGifts();
+                        document.getElementById('raceModal').classList.add('active');
+                        return;
+                    }
+
+                    // Ainda disponível: fazer POST
+                    return fetch(GOOGLE_SCRIPT_URL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            id: selectedGift.id,
+                            guestName: guestName
+                        })
+                    })
+                    .then(function(response) { return response.json(); })
+                    .then(function(result) {
+                        if (result.success) {
+                            // Sucesso! Atualizar card sem reload
+                            var giftInData = giftsData.find(function(g) {
+                                return String(g.id) === String(selectedGift.id);
+                            });
+                            if (giftInData) {
+                                giftInData.status = 'Escolhido';
+                            }
+
+                            closeSelectModal();
+                            renderGifts();
+                            document.getElementById('successModalGuest').classList.add('active');
+                        } else if (result.reason === 'already_taken') {
+                            // Race condition no servidor
+                            closeSelectModal();
+                            loadGifts();
+                            document.getElementById('raceModal').classList.add('active');
+                        } else {
+                            throw new Error(result.reason || 'Erro desconhecido');
+                        }
+                    });
+                })
+                .catch(function(err) {
+                    console.error('Erro ao confirmar presente:', err);
+                    btn.disabled = false;
+                    btn.innerHTML = '<i class="fas fa-check"></i> Confirmar';
+                    showPageToast('Erro ao processar. Tente novamente.');
+                });
+        }
+
+        // --- Controle de Modais ---
+        function closeSelectModal() {
+            document.getElementById('selectModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+            selectedGift = null;
+        }
+
+        function closeSuccessModalGuest() {
+            document.getElementById('successModalGuest').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function closeRaceModal() {
+            document.getElementById('raceModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // --- Toast simples da página do convidado ---
+        function showPageToast(message) {
+            var container = document.getElementById('toastContainer');
+            var toast = document.createElement('div');
+            toast.className = 'toast-msg';
+            toast.innerHTML = '<i class="fas fa-info-circle"></i> ' + message;
+            container.appendChild(toast);
+            setTimeout(function() {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(10px)';
+                toast.style.transition = 'all 0.3s ease';
+                setTimeout(function() { toast.remove(); }, 300);
+            }, 3000);
+        }
+
+        // Fechar modais ao clicar no overlay
+        document.querySelectorAll('.modal-overlay').forEach(function(modal) {
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
