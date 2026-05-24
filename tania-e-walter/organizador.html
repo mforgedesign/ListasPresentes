@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Organizador - Tânia e Valter</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ============================================
+           PAINEL DO ORGANIZADOR - Tânia e Valter
+           CSS Inline - Gerado automaticamente
+        ============================================ */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-background: #f5f6fa;
+            --color-title: #1a1a1a;
+            --color-accent: #c9a959;
+            --color-button: #1a1a1a;
+            --color-text: #333333;
+            --color-text-light: #666666;
+            --color-white: #FFFFFF;
+            --color-success: #27ae60;
+            --color-warning: #f39c12;
+            --color-danger: #e74c3c;
+
+            --font-body: 'Montserrat', sans-serif;
+
+            --border-radius: 12px;
+            --border-radius-sm: 6px;
+            --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-background);
+            min-height: 100vh;
+            color: var(--color-text);
+        }
+
+        /* --- DASHBOARD --- */
+        .dashboard {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1.5rem;
+        }
+
+        .dash-header {
+            background: var(--color-white);
+            border-radius: var(--border-radius);
+            padding: 1.5rem 2rem;
+            box-shadow: var(--shadow-card);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .dash-header h1 {
+            font-size: 1.4rem;
+            color: var(--color-title);
+        }
+
+        .dash-header h1 i {
+            color: var(--color-accent);
+            margin-right: 0.5rem;
+        }
+
+        .btn-refresh {
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--color-accent);
+            border-radius: var(--border-radius-sm);
+            background: transparent;
+            color: var(--color-accent);
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .btn-refresh:hover {
+            background: var(--color-accent);
+            color: var(--color-white);
+        }
+
+        /* --- PROGRESS BAR --- */
+        .progress-section {
+            background: var(--color-white);
+            border-radius: var(--border-radius);
+            padding: 1.5rem 2rem;
+            box-shadow: var(--shadow-card);
+            margin-bottom: 1.5rem;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .progress-label span {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--color-title);
+        }
+
+        .progress-label .progress-count {
+            font-size: 0.9rem;
+            color: var(--color-accent);
+            font-weight: 700;
+        }
+
+        .progress-bar-bg {
+            width: 100%;
+            height: 10px;
+            background: #e8e8e8;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--color-accent), var(--color-button));
+            border-radius: 5px;
+            transition: width 0.5s ease;
+        }
+
+        /* --- FILTERS --- */
+        .filters {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 20px;
+            background: var(--color-white);
+            color: var(--color-text-light);
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--color-accent);
+            color: var(--color-accent);
+        }
+
+        .filter-btn.active {
+            background: var(--color-button);
+            border-color: var(--color-button);
+            color: var(--color-white);
+        }
+
+        /* --- GIFTS TABLE --- */
+        .gifts-table-container {
+            background: var(--color-white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-card);
+            overflow: hidden;
+        }
+
+        .gifts-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .gifts-table thead th {
+            background: var(--color-button);
+            color: var(--color-white);
+            padding: 0.8rem 1rem;
+            text-align: left;
+            font-size: 0.85rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .gifts-table tbody tr {
+            border-bottom: 1px solid #f0f0f0;
+            transition: background 0.2s;
+        }
+
+        .gifts-table tbody tr:hover {
+            background: #fafafa;
+        }
+
+        .gifts-table tbody td {
+            padding: 0.7rem 1rem;
+            font-size: 0.9rem;
+            vertical-align: middle;
+        }
+
+        .table-thumb {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--border-radius-sm);
+            object-fit: contain;
+            background-color: #ffffff;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.25rem 0.7rem;
+            border-radius: 12px;
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+
+        .status-badge.available {
+            background: #e8f5e9;
+            color: var(--color-success);
+        }
+
+        .status-badge.chosen {
+            background: #fff3e0;
+            color: var(--color-warning);
+        }
+
+        .guest-name {
+            font-weight: 500;
+            color: var(--color-title);
+        }
+
+        .guest-name.empty {
+            color: #ccc;
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        /* --- LOADING DASH --- */
+        .dash-loading {
+            text-align: center;
+            padding: 3rem;
+        }
+
+        .dash-loading .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid #e0e0e0;
+            border-top-color: var(--color-accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* --- EMPTY STATE --- */
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: var(--color-text-light);
+        }
+
+        .empty-state i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #ddd;
+        }
+
+        /* --- RESPONSIVE TABLE --- */
+        @media (max-width: 600px) {
+            .gifts-table thead {
+                display: none;
+            }
+
+            .gifts-table tbody tr {
+                display: block;
+                padding: 1rem;
+                margin-bottom: 0.5rem;
+                border: 1px solid #f0f0f0;
+                border-radius: var(--border-radius-sm);
+            }
+
+            .gifts-table tbody td {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0.3rem 0;
+                border: none;
+            }
+
+            .gifts-table tbody td::before {
+                content: attr(data-label);
+                font-weight: 600;
+                font-size: 0.8rem;
+                color: var(--color-text-light);
+                text-transform: uppercase;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Dashboard -->
+    <div id="dashboard" class="dashboard">
+
+        <div class="dash-header">
+            <h1><i class="fas fa-clipboard-list"></i> Tânia e Valter</h1>
+            <button class="btn-refresh" onclick="refreshData()">
+                <i class="fas fa-sync-alt"></i> Atualizar
+            </button>
+        </div>
+
+        <div class="progress-section">
+            <div class="progress-label">
+                <span>Progresso dos Presentes</span>
+                <span class="progress-count" id="progressText">0 de 0</span>
+            </div>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill" id="progressBar" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all" onclick="setFilter('all', this)">
+                <i class="fas fa-list"></i> Todos
+            </button>
+            <button class="filter-btn" data-filter="available" onclick="setFilter('available', this)">
+                <i class="fas fa-check-circle"></i> Disponíveis
+            </button>
+            <button class="filter-btn" data-filter="chosen" onclick="setFilter('chosen', this)">
+                <i class="fas fa-gift"></i> Escolhidos
+            </button>
+        </div>
+
+        <div class="gifts-table-container">
+            <div id="tableContent">
+                <div class="dash-loading">
+                    <div class="spinner"></div>
+                    <p>Carregando dados...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ==========================================
+        // PAINEL DO ORGANIZADOR - JAVASCRIPT INLINE
+        // ==========================================
+
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxTERTm-J9RP6aBvOxodZht-qMKEHq7--M88ocDJdIUO-O_KuLBMd3v8EE5FXktfwxbMg/exec';
+        const EXPECTED_KEY = 'admin123';
+
+        let organizerData = [];
+        let currentFilter = 'all';
+        let authenticatedKey = EXPECTED_KEY;
+
+        // --- Inicialização ---
+        document.addEventListener('DOMContentLoaded', function() {
+            loadOrganizerData();
+        });
+
+        // --- Carregar dados do organizador ---
+        function loadOrganizerData() {
+            var tableContent = document.getElementById('tableContent');
+            tableContent.innerHTML = '<div class="dash-loading"><div class="spinner"></div><p>Carregando dados...</p></div>';
+
+            var url = SCRIPT_URL + '?mode=organizer&key=' + encodeURIComponent(authenticatedKey);
+
+            fetch(url)
+                .then(function(r) { return r.json(); })
+                .then(function(data) {
+                    if (data.success && data.items) {
+                        organizerData = data.items;
+                        updateProgress();
+                        renderTable();
+                    } else {
+                        tableContent.innerHTML = '<div class="empty-state"><i class="fas fa-exclamation-triangle"></i><p>Erro ao carregar dados.</p></div>';
+                    }
+                })
+                .catch(function(err) {
+                    console.error('Erro:', err);
+                    tableContent.innerHTML = '<div class="empty-state"><i class="fas fa-exclamation-triangle"></i><p>Erro de conexão.</p></div>';
+                });
+        }
+
+        // --- Atualizar barra de progresso ---
+        function updateProgress() {
+            var total = organizerData.length;
+            var chosen = organizerData.filter(function(g) { return g.status === 'Escolhido'; }).length;
+            var pct = total > 0 ? Math.round((chosen / total) * 100) : 0;
+
+            document.getElementById('progressText').textContent = chosen + ' de ' + total + ' presentes escolhidos';
+            document.getElementById('progressBar').style.width = pct + '%';
+        }
+
+        // --- Renderizar tabela ---
+        function renderTable() {
+            var filtered = organizerData;
+
+            if (currentFilter === 'available') {
+                filtered = organizerData.filter(function(g) { return g.status !== 'Escolhido'; });
+            } else if (currentFilter === 'chosen') {
+                filtered = organizerData.filter(function(g) { return g.status === 'Escolhido'; });
+            }
+
+            if (filtered.length === 0) {
+                document.getElementById('tableContent').innerHTML = '<div class="empty-state"><i class="fas fa-inbox"></i><p>Nenhum item encontrado com o filtro atual.</p></div>';
+                return;
+            }
+
+            var fallbackImg = 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=80&h=80&fit=crop';
+            var html = '<table class="gifts-table">';
+            html += '<thead><tr><th>Imagem</th><th>Presente</th><th>Status</th><th>Convidado</th></tr></thead>';
+            html += '<tbody>';
+
+            filtered.forEach(function(gift) {
+                var isChosen = (gift.status === 'Escolhido');
+                html += '<tr>';
+                html += '<td data-label="Imagem"><img class="table-thumb" src="' + (gift.image || fallbackImg) + '" alt="' + gift.name + '" onerror="this.src=\'' + fallbackImg + '\'"></td>';
+                html += '<td data-label="Presente"><strong>' + gift.name + '</strong></td>';
+                html += '<td data-label="Status"><span class="status-badge ' + (isChosen ? 'chosen' : 'available') + '">' + (isChosen ? 'Escolhido' : 'Disponível') + '</span></td>';
+                html += '<td data-label="Convidado"><span class="guest-name ' + (gift.guestName ? '' : 'empty') + '">' + (gift.guestName || '—') + '</span></td>';
+                html += '</tr>';
+            });
+
+            html += '</tbody></table>';
+            document.getElementById('tableContent').innerHTML = html;
+        }
+
+        // --- Filtros ---
+        function setFilter(filter, btn) {
+            currentFilter = filter;
+
+            document.querySelectorAll('.filter-btn').forEach(function(b) {
+                b.classList.remove('active');
+            });
+            btn.classList.add('active');
+
+            renderTable();
+        }
+
+        // --- Refresh ---
+        function refreshData() {
+            loadOrganizerData();
+        }
+    </script>
+</body>
+
+</html>
