@@ -395,7 +395,7 @@
                 })
                 .catch(function(err) {
                     console.error('Erro:', err);
-                    tableContent.innerHTML = '<div class="empty-state"><i class="fas fa-exclamation-triangle"></i><p>Erro de conexão.</p></div>';
+                    tableContent.innerHTML = '<div class="empty-state"><i class="fas fa-exclamation-triangle"></i><p>Erro de conexão (CORS).</p><div style="font-size:0.8rem;color:#e5e7eb;margin:1rem 0;text-align:left;background:#1e293b;padding:0.75rem;border-radius:6px;border:1px solid #334155;"><strong style="color:#ef4444;">Como corrigir no Apps Script:</strong><ol style="margin:0.5rem 0 0 1.2rem;padding:0;"><li>No editor do Apps Script, clique em <strong>Implantar > Nova implantação</strong></li><li>Em "Executar como", selecione <strong>Eu (seu-email@gmail.com)</strong></li><li>Em "Quem tem acesso", selecione <strong>Qualquer pessoa</strong></li><li>Clique em Implantar e autorize as permissões de acesso do Google.</li></ol></div></div>';
                 });
         }
 
