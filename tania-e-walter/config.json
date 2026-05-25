@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "generatedAt": "2026-05-25T11:37:46.097Z",
+  "generatedAt": "2026-05-25T11:41:31.457Z",
   "config": {
     "titleName": "Tânia e Walter",
     "subtitle": "Casamento",
@@ -18,7 +18,7 @@
     "backgroundOpacity": 100,
     "googleScriptUrl": "https://script.google.com/macros/s/AKfycbxTERTm-J9RP6aBvOxodZht-qMKEHq7--M88ocDJdIUO-O_KuLBMd3v8EE5FXktfwxbMg/exec",
     "organizerKey": "",
-    "noticeMessage": "Escolha os presentes que deseja dar. Cada presente só pode ser escolhido por um convidado! 🎁",
+    "noticeMessage": "Sua presença já é o nosso maior presente e tornará esse dia ainda mais especial. Para quem desejar nos presentear, deixamos algumas sugestões com carinho.",
     "thankYouMessage": "Obrigado por escolher um presente! Sua presença é o melhor presente! 💝",
     "backgroundImage": null
   },
