@@ -956,11 +956,11 @@ Caso prefira presentear de outra forma, deixo também minha chave Pix como uma o
                                 if (remote) {
                                     return {
                                         id: localGift.id,
-                                        name: remote.name || localGift.name,
-                                        image: remote.image || localGift.image,
+                                        name: localGift.name || remote.name,
+                                        image: localGift.image || remote.image,
                                         status: remote.status || localGift.status,
-                                        brand: localGift.brand,
-                                        price: localGift.price
+                                        brand: localGift.brand || remote.brand || '',
+                                        price: localGift.price || remote.price || ''
                                     };
                                 }
                                 return localGift;
