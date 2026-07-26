@@ -396,7 +396,36 @@
                 .then(function(r) { return r.json(); })
                 .then(function(data) {
                     if (data.success && data.items && data.items.length > 0) {
-                        organizerData = data.items;
+                        var remoteMap = {};
+                        data.items.forEach(function(item) {
+                            remoteMap[String(item.id)] = item;
+                        });
+
+                        if (organizerData && organizerData.length > 0) {
+                            organizerData = organizerData.map(function(localGift) {
+                                var remote = remoteMap[String(localGift.id)];
+                                if (remote) {
+                                    return {
+                                        id: localGift.id,
+                                        name: localGift.name || remote.name,
+                                        image: localGift.image || remote.image,
+                                        status: remote.status || localGift.status,
+                                        guestName: remote.guestName || ''
+                                    };
+                                }
+                                return localGift;
+                            });
+
+                            data.items.forEach(function(remote) {
+                                var exists = organizerData.some(function(g) { return String(g.id) === String(remote.id); });
+                                if (!exists) {
+                                    organizerData.push(remote);
+                                }
+                            });
+                        } else {
+                            organizerData = data.items;
+                        }
+
                         updateProgress();
                         renderTable();
                     } else if (!organizerData || organizerData.length === 0) {
