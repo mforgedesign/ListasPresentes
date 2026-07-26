@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "generatedAt": "2026-07-26T18:48:05.558Z",
+  "generatedAt": "2026-07-26T18:58:54.446Z",
   "config": {
     "titleName": "Laura",
     "subtitle": "15 Anos",
@@ -18,7 +18,7 @@
     "backgroundOpacity": 100,
     "googleScriptUrl": "https://script.google.com/macros/s/AKfycbyPK2vLLt7b2fONzzGTMWhnsIFlRdpbcYJ89tW5_hERnyCcqacyDjH6kdTFMcNzDF81/exec",
     "organizerKey": "12345678",
-    "noticeMessage": "Escolha os presentes que deseja dar. Cada presente só pode ser escolhido por um convidado! 🎁\n\nCaso prefira presentear de outra forma, deixo também minha chave Pix como uma opção, especialmente se a correria do dia a dia não permitir escolher um presente com antecedência. Fique à vontade para optar pela forma que for mais prática e confortável para você. O mais importante será celebrar esse momento com a sua presença.",
+    "noticeMessage": "Escolha os presentes que você irá se comprometer a dar. Cada presente só pode ser escolhido por um convidado! 🎁\n\nCaso prefira presentear de outra forma, deixo também minha chave Pix como uma opção, especialmente se a correria do dia a dia não permitir escolher um presente com antecedência. Fique à vontade para optar pela forma que for mais prática e confortável para você. O mais importante será celebrar esse momento com a sua presença.",
     "thankYouMessage": "Obrigado por escolher um presente! Sua presença é o melhor presente! 💝",
     "showPrices": true,
     "showPixKey": true,
