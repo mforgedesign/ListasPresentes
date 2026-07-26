@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Presentes - Laura | 15 Anos</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Dancing+Script:wght@700&family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;700&family=Lora:wght@400;700&family=Great+Vibes&family=Open+Sans:wght@400&family=Roboto:wght@400&family=Lato:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ============================================
+           LISTA DE PRESENTES V2 - Laura
+           CSS Inline - Gerado automaticamente
+        ============================================ */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-background: #ffffff;
+            --color-title: #1a1a1a;
+            --color-accent: #d9315b;
+            --color-button: #1a1a1a;
+            --color-text: #333333;
+            --color-text-light: #666666;
+            --color-white: #FFFFFF;
+            --color-gray-light: rgba(255, 255, 255, 0.95);
+            --color-overlay: rgba(0, 0, 0, 0.7);
+            --color-success: #27ae60;
+            --color-danger: #e74c3c;
+
+            --font-title: 'Cormorant Garamond', serif;
+            --font-body: 'Montserrat', sans-serif;
+
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+
+            --border-radius: 12px;
+            --border-radius-sm: 6px;
+            --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
+            --shadow-modal: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        body {
+            font-family: var(--font-body);
+            min-height: 100vh;
+            background-color: var(--color-background);
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: none;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: var(--spacing-lg);
+            min-height: 100vh;
+        }
+
+        /* --- HEADER --- */
+        .header {
+            text-align: center;
+            padding: var(--spacing-xl) var(--spacing-sm) var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .title {
+            font-family: var(--font-title);
+            font-size: 3.5rem;
+            font-weight: 600;
+            color: var(--color-title);
+            line-height: 1.2;
+            margin-bottom: var(--spacing-xs);
+            letter-spacing: 0.02em;
+        }
+
+        .subtitle {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: var(--color-accent);
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-top: var(--spacing-sm);
+        }
+
+        .notice {
+            background: var(--color-white);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+            border-left: 3px solid var(--color-accent);
+            box-shadow: var(--shadow-card);
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-sm);
+        }
+
+        .notice i {
+            font-size: 1.2rem;
+            color: var(--color-accent);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .notice p {
+            font-size: 0.9rem;
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+
+        /* --- LOADING SPINNER --- */
+        .loading-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 1rem;
+            gap: 1.5rem;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(0, 0, 0, 0.1);
+            border-top-color: var(--color-accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            font-size: 1rem;
+            color: var(--color-text-light);
+            font-weight: 500;
+        }
+
+        /* --- GIFTS SECTION --- */
+        .gifts-section {
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .section-title {
+            font-family: var(--font-title);
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--color-title);
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-sm);
+        }
+
+        .section-title i {
+            color: var(--color-accent);
+            font-size: 1.2rem;
+        }
+
+        .gifts-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-md);
+        }
+
+        /* --- GIFT CARD --- */
+        .gift-card {
+            background: var(--color-white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            animation: fadeInUp 0.5s ease both;
+        }
+
+        .gift-card:nth-child(1) { animation-delay: 0.05s; }
+        .gift-card:nth-child(2) { animation-delay: 0.1s; }
+        .gift-card:nth-child(3) { animation-delay: 0.15s; }
+        .gift-card:nth-child(4) { animation-delay: 0.2s; }
+        .gift-card:nth-child(5) { animation-delay: 0.25s; }
+        .gift-card:nth-child(6) { animation-delay: 0.3s; }
+        .gift-card:nth-child(7) { animation-delay: 0.35s; }
+        .gift-card:nth-child(8) { animation-delay: 0.4s; }
+        .gift-card:nth-child(9) { animation-delay: 0.45s; }
+        .gift-card:nth-child(10) { animation-delay: 0.5s; }
+        .gift-card:nth-child(11) { animation-delay: 0.55s; }
+        .gift-card:nth-child(12) { animation-delay: 0.6s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .gift-card.available {
+            cursor: pointer;
+        }
+
+        .gift-card.available:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .gift-card.available:active {
+            transform: scale(0.98);
+        }
+
+        .gift-card.chosen {
+            opacity: 0.55;
+            filter: grayscale(30%);
+        }
+
+        .gift-card.chosen:hover {
+            transform: none;
+            box-shadow: var(--shadow-card);
+        }
+
+        /* Efeito shimmer nos cards disponíveis */
+        .gift-card.available::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .gift-card.available:hover::before {
+            left: 100%;
+        }
+
+        .gift-image {
+            width: 100%;
+            aspect-ratio: 1;
+            overflow: hidden;
+            background: #ffffff;
+        }
+
+        .gift-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .gift-card.available:hover .gift-image img {
+            transform: scale(1.05);
+        }
+
+        .gift-info {
+            padding: var(--spacing-sm);
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .gift-info h3 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--color-title);
+            margin: 0.1rem 0 0.15rem 0;
+            line-height: 1.2;
+        }
+
+        .gift-info .brand {
+            font-size: 0.75rem;
+            color: #888;
+        }
+
+        .gift-btn {
+            width: 100%;
+            padding: 0.5rem var(--spacing-xs);
+            border: none;
+            background: var(--color-button);
+            color: var(--color-white);
+            font-family: var(--font-body);
+            font-size: 0.78rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+        }
+
+        .gift-btn:hover {
+            filter: brightness(1.1);
+        }
+
+        .gift-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        .gift-btn.chosen-btn {
+            background: #999;
+            cursor: default;
+        }
+
+        .gift-btn:hover i {
+            animation: heartPulse 0.6s ease infinite;
+        }
+
+        .gift-btn:disabled:hover i {
+            animation: none;
+        }
+
+        @keyframes heartPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        /* --- MODAL DE SELEÇÃO --- */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--color-overlay);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-sm);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--color-white);
+            border-radius: var(--border-radius);
+            width: 100%;
+            max-width: 420px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: var(--shadow-modal);
+            animation: modalSlideIn 0.3s ease;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .modal-header {
+            background: var(--color-button);
+            padding: var(--spacing-lg);
+            text-align: center;
+            color: var(--color-white);
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .modal-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .modal-header h2 {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .modal-body {
+            padding: var(--spacing-lg);
+        }
+
+        .modal-gift-preview {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .modal-gift-preview img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            background-color: #ffffff;
+            border-radius: var(--border-radius-sm);
+            box-shadow: var(--shadow-card);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .modal-gift-preview h3 {
+            font-size: 1.1rem;
+            color: var(--color-title);
+            font-weight: 600;
+        }
+
+        .modal-input-group {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .modal-input-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--color-title);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .modal-input-group input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: var(--border-radius-sm);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            outline: none;
+        }
+
+        .modal-input-group input:focus {
+            border-color: var(--color-accent);
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: var(--spacing-sm);
+        }
+
+        .btn-confirm {
+            flex: 1;
+            padding: 0.8rem;
+            border: none;
+            border-radius: var(--border-radius-sm);
+            background: var(--color-button);
+            color: var(--color-white);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-confirm:hover {
+            filter: brightness(1.1);
+            transform: translateY(-1px);
+        }
+
+        .btn-confirm:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-cancel {
+            padding: 0.8rem 1.2rem;
+            border: 2px solid #e0e0e0;
+            border-radius: var(--border-radius-sm);
+            background: transparent;
+            color: var(--color-text-light);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-cancel:hover {
+            border-color: var(--color-text-light);
+            background: #f5f5f5;
+        }
+
+        /* --- MODAL DE SUCESSO --- */
+        .success-content {
+            text-align: center;
+            padding: var(--spacing-xl);
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            color: var(--color-success);
+            margin-bottom: var(--spacing-md);
+            animation: successBounce 0.6s ease;
+        }
+
+        @keyframes successBounce {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .success-content h2 {
+            font-size: 1.3rem;
+            color: var(--color-title);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .success-content p {
+            font-size: 0.95rem;
+            color: var(--color-text-light);
+            line-height: 1.6;
+        }
+
+        .btn-success-close {
+            margin-top: var(--spacing-lg);
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: var(--border-radius-sm);
+            background: var(--color-button);
+            color: var(--color-white);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-success-close:hover {
+            filter: brightness(1.1);
+        }
+
+        /* --- MODAL DE RACE CONDITION (Alguém foi mais rápido) --- */
+        .race-content {
+            text-align: center;
+            padding: var(--spacing-xl);
+        }
+
+        .race-icon {
+            font-size: 3.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .race-content h2 {
+            font-size: 1.2rem;
+            color: var(--color-title);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .race-content p {
+            font-size: 0.95rem;
+            color: var(--color-text-light);
+            line-height: 1.6;
+        }
+
+        /* --- FOOTER --- */
+        .footer {
+            text-align: center;
+            padding: var(--spacing-xl) var(--spacing-sm);
+            color: var(--color-text-light);
+        }
+
+        .footer p {
+            font-size: 0.9rem;
+        }
+
+        /* --- PIX SECTION --- */
+        .pix-card {
+            background: var(--color-white);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            margin-top: var(--spacing-md);
+            border: 2px dashed var(--color-accent);
+            box-shadow: var(--shadow-card);
+            text-align: center;
+        }
+
+        .pix-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pix-header i {
+            font-size: 1.4rem;
+            color: var(--color-accent);
+        }
+
+        .pix-header h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--color-title);
+        }
+
+        .pix-description {
+            font-size: 0.85rem;
+            color: var(--color-text-light);
+            margin-bottom: 0.75rem;
+        }
+
+        .pix-input-group {
+            display: flex;
+            gap: 0.5rem;
+            max-width: 450px;
+            margin: 0 auto;
+        }
+
+        .pix-input-group input {
+            flex: 1;
+            padding: 0.6rem 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius-sm);
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            background: #f9f9f9;
+            color: var(--color-text);
+        }
+
+        .btn-copy-pix {
+            padding: 0.6rem 1rem;
+            border: none;
+            border-radius: var(--border-radius-sm);
+            background: var(--color-button);
+            color: var(--color-white);
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            white-space: nowrap;
+        }
+
+        .btn-copy-pix:hover {
+            filter: brightness(1.15);
+        }
+
+        .gift-price {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            margin-top: 0.2rem;
+        }
+
+        /* --- ERROR STATE --- */
+        .error-container {
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+
+        .error-container i {
+            font-size: 3rem;
+            color: var(--color-danger);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .error-container h3 {
+            font-size: 1.2rem;
+            color: var(--color-title);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .error-container p {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+        }
+
+        .btn-retry {
+            margin-top: var(--spacing-lg);
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: var(--border-radius-sm);
+            background: var(--color-button);
+            color: var(--color-white);
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-retry:hover {
+            filter: brightness(1.1);
+        }
+
+        /* --- TOAST --- */
+        .toast-container {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .toast-msg {
+            background: var(--color-button);
+            color: var(--color-white);
+            padding: 0.8rem 1.2rem;
+            border-radius: var(--border-radius-sm);
+            font-size: 0.9rem;
+            box-shadow: var(--shadow-card);
+            animation: toastIn 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        @keyframes toastIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (min-width: 480px) {
+            .container {
+                padding: var(--spacing-md);
+            }
+
+            .title {
+                font-size: 4rem;
+            }
+
+            .gifts-grid {
+                gap: var(--spacing-md);
+            }
+
+            .gift-info h3 {
+                font-size: 1rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 750px;
+                padding: var(--spacing-lg);
+            }
+
+            .title {
+                font-size: 4.5rem;
+            }
+
+            .gifts-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <header class="header">
+            <h1 class="title">Laura</h1>
+            <p class="subtitle">15 Anos</p>
+
+            <div class="notice">
+                <i class="fas fa-info-circle"></i>
+                <p>Escolha os presentes que deseja dar. Cada presente só pode ser escolhido por um convidado! 🎁</p>
+            </div>
+
+            
+        </header>
+
+        <section class="gifts-section">
+            <h2 class="section-title">
+                <i class="fas fa-gift"></i> Escolha um Presente
+            </h2>
+
+            <!-- Container dinâmico: loading, grid ou erro -->
+            <div id="giftsContainer">
+                <div class="loading-container">
+                    <div class="spinner"></div>
+                    <p class="loading-text">Carregando presentes...</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>Feito com 💝 para Laura</p>
+        </footer>
+    </div>
+
+    <!-- Modal de Seleção de Presente -->
+    <div id="selectModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fas fa-gift modal-icon"></i>
+                <h2>Confirmar Presente</h2>
+            </div>
+            <div class="modal-body">
+                <div class="modal-gift-preview">
+                    <img id="modalGiftImage" src="" alt="Presente">
+                    <h3 id="modalGiftName"></h3>
+                </div>
+                <div class="modal-input-group">
+                    <label for="guestNameInput">Seu Nome e Sobrenome</label>
+                    <input type="text" id="guestNameInput" placeholder="Ex: Maria Silva" autocomplete="name">
+                </div>
+                <div class="modal-actions">
+                    <button class="btn-confirm" id="btnConfirmGift" onclick="confirmGift()">
+                        <i class="fas fa-check"></i> Confirmar
+                    </button>
+                    <button class="btn-cancel" onclick="closeSelectModal()">
+                        Cancelar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Sucesso -->
+    <div id="successModalGuest" class="modal-overlay">
+        <div class="modal-content">
+            <div class="success-content">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Presente Confirmado!</h2>
+                <p>Obrigado por escolher um presente! Sua presença é o melhor presente! 💝</p>
+                <button class="btn-success-close" onclick="closeSuccessModalGuest()">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Race Condition -->
+    <div id="raceModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="race-content">
+                <div class="race-icon">😅</div>
+                <h2>Ops! Presente já escolhido</h2>
+                <p>Parece que alguém foi mais rápido e acabou escolhendo o mesmo presente que você! 😅</p>
+                <p style="margin-top: 0.5rem;">Mas não se preocupe, há outros presentes incríveis esperando por você!</p>
+                <button class="btn-success-close" onclick="closeRaceModal()">Escolher outro presente</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script>
+        // ==========================================
+        // LISTA DE PRESENTES V2 - JAVASCRIPT INLINE
+        // Sincronização com Google Sheets via Apps Script
+        // ==========================================
+
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyPK2vLLt7b2fONzzGTMWhnsIFlRdpbcYJ89tW5_hERnyCcqacyDjH6kdTFMcNzDF81/exec';
+        const SHOW_PRICES = true;
+        const PRODUCTS_CONFIG = {"ms220zbc883giyylhvl":{"price":"99,99","brand":"Chamego"},"ms221q3c9gjvn0x0h7h":{"price":"125,90","brand":"L'Occitane au Brésil"},"ms222ljdgtxv6p5hb2k":{"price":"99,99","brand":"Romã"},"ms223ehk60ajfl7bjrl":{"price":"529,00","brand":"Pandora"},"ms224wipejxuj6xvuhi":{"price":"110,00","brand":"Kiko Milano"},"ms225e94mhq0t0cqfzk":{"price":"180,50","brand":"Kiko Milano"},"ms225zt43h7kiew8x75":{"price":"149,90","brand":""},"ms226erseg5t25iwwa5":{"price":"243,93","brand":"Kiko Milano Glamour"},"ms226s00sihwhvmhlb":{"price":"264,69","brand":"Kiko Milano"},"ms227ip4jcuu85h1rz":{"price":"209,60","brand":"L'occiane au Brésil"},"ms2285owxbkynksdt38":{"price":"274,99","brand":"Adidas"},"ms228j3c75m6y8j5p9":{"price":"379,99","brand":"Adidas"},"ms229qyg8ufbw9vtf9l":{"price":"260,00","brand":"Lince"},"ms22ab1l3y00slolxic":{"price":"180,24","brand":"Mondaine"},"ms22ar60glgs006qjem":{"price":"295,23","brand":"Mondaine"},"ms22b7nk8piyto8dx8v":{"price":"189,90","brand":"Classe"},"ms22bhftdq7106ma2bm":{"price":"189,90","brand":"Classe"},"ms22bvrsq8lc7nwhmt":{"price":"229,99","brand":"Fila"},"ms22ca21rnuftrrjqp":{"price":"349,99","brand":"Nike"},"ms22ct14nxpuoq5ygjk":{"price":"266,50","brand":"Yara Candy Lattafa"},"ms22dcsxqtk4fkygkq":{"price":"224,01","brand":"Fakhar Lataffa"},"ms22dtggnd14qslevhk":{"price":"369,90","brand":"Classe"},"ms22fwbc4vcyr0x9zcm":{"price":"229,90","brand":"Classe"},"ms22ggh4b41vqtyy6oo":{"price":"309,90","brand":"Classe"},"ms22gvoo6turlyho7wv":{"price":"189,90","brand":"Classe"},"ms22hi88ir5cj0dqgun":{"price":"249,00","brand":"Enamel Buckle"},"ms22hvfk0nw027r3q66":{"price":"299,99","brand":"Nike"},"ms22i8qg9wzzsuap897":{"price":"252,62","brand":"Adidas"},"ms22j1og17hctdw7veb":{"price":"289,90","brand":""},"ms22jiywvk6kj76t8":{"price":"270,00","brand":"Importado"},"ms22k1js2642iaxzmwsj":{"price":"250,00","brand":"L'Occitane Au Brésil"},"ms22kj80ur9ueatj4b":{"price":"120,00","brand":"L'Occitane au Brésil"},"ms22l3yhfqg60umb60h":{"price":"98,00","brand":"L'Occitane au Brésil"},"ms22lmoove3f3ueou7":{"price":"245,00","brand":"L'Occitane au Brésil"},"ms22m1rcjqgz4wfta1o":{"price":"98,00","brand":"L'Occitane au Brésil"},"ms22mru8qgfhgjww9x":{"price":"120,00","brand":"L'Occitane au Brésil"},"ms22n5s0lhth8l9liek":{"price":"240,00","brand":"Britney Spears"},"ms22nk6weq6bbusw0a":{"price":"299,90","brand":"Campus"}};
+
+        let giftsData = [];
+        let selectedGift = null;
+
+        // --- Inicialização ---
+        document.addEventListener('DOMContentLoaded', function() {
+            loadGifts();
+
+            // Enter no input de nome confirma o presente
+            document.getElementById('guestNameInput').addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') {
+                    confirmGift();
+                }
+            });
+
+            // Escape fecha modais
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeSelectModal();
+                    closeSuccessModalGuest();
+                    closeRaceModal();
+                }
+            });
+        });
+
+        // --- Carregar presentes do Google Sheets ---
+        function loadGifts() {
+            var container = document.getElementById('giftsContainer');
+            container.innerHTML = '<div class="loading-container"><div class="spinner"></div><p class="loading-text">Carregando presentes...</p></div>';
+
+            if (!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL === 'SUA_URL_AQUI') {
+                container.innerHTML = '<div class="error-container"><i class="fas fa-exclamation-triangle"></i><h3>URL não configurada</h3><p>O organizador ainda não configurou a sincronização com o Google Sheets.</p></div>';
+                return;
+            }
+
+            fetch(GOOGLE_SCRIPT_URL)
+                .then(function(response) { return response.json(); })
+                .then(function(data) {
+                    if (data.success && data.items) {
+                        giftsData = data.items;
+                        renderGifts();
+                    } else {
+                        container.innerHTML = '<div class="error-container"><i class="fas fa-exclamation-triangle"></i><h3>Erro ao carregar</h3><p>Não foi possível carregar os presentes. Tente novamente.</p><button class="btn-retry" onclick="loadGifts()"><i class="fas fa-redo"></i> Tentar novamente</button></div>';
+                    }
+                })
+                .catch(function(err) {
+                    console.error('Erro ao carregar presentes:', err);
+                    container.innerHTML = '<div class="error-container"><i class="fas fa-exclamation-triangle"></i><h3>Erro de conexão (CORS)</h3><p>Não foi possível conectar ao Google Planilhas. Isso ocorre por conta das configurações de permissão no Google Apps Script.</p><div style="font-size:0.8rem;color:#e5e7eb;margin:1rem 0;text-align:left;background:#1e293b;padding:0.75rem;border-radius:6px;border:1px solid #334155;"><strong style="color:#ef4444;">Como corrigir no Apps Script:</strong><ol style="margin:0.5rem 0 0 1.2rem;padding:0;"><li>No editor do Apps Script, clique em <strong>Implantar > Nova implantação</strong></li><li>Em "Executar como", selecione <strong>Eu (seu-email@gmail.com)</strong></li><li>Em "Quem tem acesso", selecione <strong>Qualquer pessoa</strong></li><li>Clique em Implantar e autorize as permissões de acesso do Google.</li></ol></div><button class="btn-retry" onclick="loadGifts()"><i class="fas fa-redo"></i> Tentar novamente</button></div>';
+                });
+        }
+
+        // --- Renderizar cards de presentes ---
+        function renderGifts() {
+            var container = document.getElementById('giftsContainer');
+
+            if (!giftsData || giftsData.length === 0) {
+                container.innerHTML = '<div class="error-container"><i class="fas fa-box-open"></i><h3>Nenhum presente cadastrado</h3><p>A lista de presentes ainda está sendo preparada.</p></div>';
+                return;
+            }
+
+            var html = '<div class="gifts-grid">';
+
+            giftsData.forEach(function(gift, index) {
+                var isChosen = (gift.status === 'Escolhido');
+                var cardClass = isChosen ? 'gift-card chosen' : 'gift-card available';
+                var fallbackImg = 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=300&h=300&fit=crop';
+
+                html += '<div class="' + cardClass + '" data-gift-id="' + gift.id + '"' +
+                    (!isChosen ? ' onclick="selectGift(\'' + String(gift.id).replace(/'/g, "\\'") + '\')"' : '') + '>';
+                html += '<div class="gift-image">';
+                html += '<img src="' + (gift.image || fallbackImg) + '" alt="' + gift.name + '" onerror="this.src=\'' + fallbackImg + '\'">';
+                html += '</div>';
+                var configItem = PRODUCTS_CONFIG[gift.id] || {};
+                var price = gift.price || configItem.price || '';
+
+                html += '<div class="gift-info">';
+                html += '<h3>' + gift.name + '</h3>';
+                if (SHOW_PRICES && price) {
+                    html += '<div class="gift-price">' + price + '</div>';
+                }
+                html += '</div>';
+                html += '<button class="gift-btn' + (isChosen ? ' chosen-btn' : '') + '"' + (isChosen ? ' disabled' : '') + '>';
+                html += isChosen ? '✓ Já presenteado' : '🎁 Dar este presente';
+                html += '</button>';
+                html += '</div>';
+            });
+
+            html += '</div>';
+            container.innerHTML = html;
+        }
+
+        // --- Selecionar presente (abre modal) ---
+        function selectGift(giftId) {
+            var gift = giftsData.find(function(g) { return String(g.id) === String(giftId); });
+            if (!gift || gift.status === 'Escolhido') return;
+
+            selectedGift = gift;
+
+            var fallbackImg = 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=300&h=300&fit=crop';
+            document.getElementById('modalGiftImage').src = gift.image || fallbackImg;
+            document.getElementById('modalGiftName').textContent = gift.name;
+            document.getElementById('guestNameInput').value = '';
+            document.getElementById('btnConfirmGift').disabled = false;
+            document.getElementById('btnConfirmGift').innerHTML = '<i class="fas fa-check"></i> Confirmar';
+
+            document.getElementById('selectModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            // Focar no campo de nome
+            setTimeout(function() {
+                document.getElementById('guestNameInput').focus();
+            }, 300);
+        }
+
+        // --- Confirmar presente com tratamento de race condition ---
+        function confirmGift() {
+            var guestName = document.getElementById('guestNameInput').value.trim();
+
+            if (!guestName) {
+                showPageToast('Por favor, informe seu nome e sobrenome.');
+                document.getElementById('guestNameInput').focus();
+                return;
+            }
+
+            if (!selectedGift) return;
+
+            var btn = document.getElementById('btnConfirmGift');
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processando...';
+
+            // RACE CONDITION: Antes de POST, fazer GET para verificar se ainda está disponível
+            fetch(GOOGLE_SCRIPT_URL)
+                .then(function(response) { return response.json(); })
+                .then(function(data) {
+                    if (!data.success || !data.items) {
+                        throw new Error('Erro ao verificar disponibilidade');
+                    }
+
+                    var freshGift = data.items.find(function(g) {
+                        return String(g.id) === String(selectedGift.id);
+                    });
+
+                    if (!freshGift) {
+                        throw new Error('Presente não encontrado');
+                    }
+
+                    if (freshGift.status === 'Escolhido') {
+                        // Alguém foi mais rápido!
+                        closeSelectModal();
+                        giftsData = data.items;
+                        renderGifts();
+                        document.getElementById('raceModal').classList.add('active');
+                        return;
+                    }
+
+                    // Ainda disponível: fazer POST
+                    var params = new URLSearchParams();
+                    params.append('id', selectedGift.id);
+                    params.append('guestName', guestName);
+
+                    return fetch(GOOGLE_SCRIPT_URL, {
+                        method: 'POST',
+                        body: params
+                    })
+                    .then(function(response) { return response.json(); })
+                    .then(function(result) {
+                        if (result.success) {
+                            // Sucesso! Atualizar card sem reload
+                            var giftInData = giftsData.find(function(g) {
+                                return String(g.id) === String(selectedGift.id);
+                            });
+                            if (giftInData) {
+                                giftInData.status = 'Escolhido';
+                            }
+
+                            closeSelectModal();
+                            renderGifts();
+                            document.getElementById('successModalGuest').classList.add('active');
+                        } else if (result.reason === 'already_taken') {
+                            // Race condition no servidor
+                            closeSelectModal();
+                            loadGifts();
+                            document.getElementById('raceModal').classList.add('active');
+                        } else {
+                            throw new Error(result.reason || 'Erro desconhecido');
+                        }
+                    });
+                })
+                .catch(function(err) {
+                    console.error('Erro ao confirmar presente:', err);
+                    btn.disabled = false;
+                    btn.innerHTML = '<i class="fas fa-check"></i> Confirmar';
+                    showPageToast('Erro ao processar. Tente novamente.');
+                });
+        }
+
+        // --- Controle de Modais ---
+        function closeSelectModal() {
+            document.getElementById('selectModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+            selectedGift = null;
+        }
+
+        function closeSuccessModalGuest() {
+            document.getElementById('successModalGuest').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function closeRaceModal() {
+            document.getElementById('raceModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // --- Copiar Chave PIX ---
+        function copyPixKey() {
+            var input = document.getElementById('pixKeyDisplay');
+            if (!input) return;
+            input.select();
+            input.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(input.value).then(function() {
+                showPageToast('Chave PIX copiada para a área de transferência! 📋');
+            }).catch(function() {
+                showPageToast('Erro ao copiar. Selecione e copie manualmente.');
+            });
+        }
+
+        // --- Toast simples da página do convidado ---
+        function showPageToast(message) {
+            var container = document.getElementById('toastContainer');
+            var toast = document.createElement('div');
+            toast.className = 'toast-msg';
+            toast.innerHTML = '<i class="fas fa-info-circle"></i> ' + message;
+            container.appendChild(toast);
+            setTimeout(function() {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(10px)';
+                toast.style.transition = 'all 0.3s ease';
+                setTimeout(function() { toast.remove(); }, 300);
+            }, 3000);
+        }
+
+        // Fechar modais ao clicar no overlay
+        document.querySelectorAll('.modal-overlay').forEach(function(modal) {
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
