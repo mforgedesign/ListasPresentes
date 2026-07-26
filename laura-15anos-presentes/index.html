@@ -794,7 +794,7 @@
 
             <div class="notice">
                 <i class="fas fa-info-circle"></i>
-                <p>Escolha os presentes que deseja dar. Cada presente só pode ser escolhido por um convidado! 🎁
+                <p>Escolha os presentes que você irá se comprometer a dar. Cada presente só pode ser escolhido por um convidado! 🎁
 
 Caso prefira presentear de outra forma, deixo também minha chave Pix como uma opção, especialmente se a correria do dia a dia não permitir escolher um presente com antecedência. Fique à vontade para optar pela forma que for mais prática e confortável para você. O mais importante será celebrar esse momento com a sua presença.</p>
             </div>
@@ -846,6 +846,7 @@ Caso prefira presentear de outra forma, deixo também minha chave Pix como uma o
                 <div class="modal-gift-preview">
                     <img id="modalGiftImage" src="" alt="Presente">
                     <h3 id="modalGiftName"></h3>
+                    <p id="modalGiftBrand" class="modal-gift-brand" style="font-size: 0.85rem; color: #888; margin-top: 0.25rem;"></p>
                 </div>
                 <div class="modal-input-group">
                     <label for="guestNameInput">Seu Nome e Sobrenome</label>
@@ -1012,10 +1013,14 @@ Caso prefira presentear de outra forma, deixo também minha chave Pix como uma o
                 html += '<img src="' + (gift.image || fallbackImg) + '" alt="' + gift.name + '" onerror="this.src=\'' + fallbackImg + '\'">';
                 html += '</div>';
                 var configItem = PRODUCTS_CONFIG[gift.id] || {};
+                var brand = gift.brand || configItem.brand || '';
                 var price = gift.price || configItem.price || '';
 
                 html += '<div class="gift-info">';
                 html += '<h3>' + gift.name + '</h3>';
+                if (brand) {
+                    html += '<div class="brand">' + brand + '</div>';
+                }
                 if (SHOW_PRICES && price) {
                     html += '<div class="gift-price">' + price + '</div>';
                 }
@@ -1036,6 +1041,14 @@ Caso prefira presentear de outra forma, deixo também minha chave Pix como uma o
             if (!gift || gift.status === 'Escolhido') return;
 
             selectedGift = gift;
+
+            var configItem = PRODUCTS_CONFIG[gift.id] || {};
+            var brand = gift.brand || configItem.brand || '';
+            var brandEl = document.getElementById('modalGiftBrand');
+            if (brandEl) {
+                brandEl.textContent = brand ? 'Marca: ' + brand : '';
+                brandEl.style.display = brand ? 'block' : 'none';
+            }
 
             var fallbackImg = 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=300&h=300&fit=crop';
             document.getElementById('modalGiftImage').src = gift.image || fallbackImg;
