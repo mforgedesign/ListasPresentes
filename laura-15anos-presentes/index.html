@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Presentes - Laura | 15 Anos</title>
 
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎁</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Dancing+Script:wght@700&family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;700&family=Lora:wght@400;700&family=Great+Vibes&family=Open+Sans:wght@400&family=Roboto:wght@400&family=Lato:wght@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 
     <style>
         /* ============================================
@@ -793,9 +794,25 @@
 
             <div class="notice">
                 <i class="fas fa-info-circle"></i>
-                <p>Escolha os presentes que deseja dar. Cada presente só pode ser escolhido por um convidado! 🎁</p>
+                <p>Escolha os presentes que deseja dar. Cada presente só pode ser escolhido por um convidado! 🎁
+
+Caso prefira presentear de outra forma, deixo também minha chave Pix como uma opção, especialmente se a correria do dia a dia não permitir escolher um presente com antecedência. Fique à vontade para optar pela forma que for mais prática e confortável para você. O mais importante será celebrar esse momento com a sua presença.</p>
             </div>
 
+            
+            <div class="pix-card">
+                <div class="pix-header">
+                    <i class="fas fa-qrcode"></i>
+                    <h3>Contribuição via PIX</h3>
+                </div>
+                <p class="pix-description">Prefere contribuir com um valor via PIX? Use a chave copia e cola abaixo:</p>
+                <div class="pix-input-group">
+                    <input type="text" id="pixKeyDisplay" value="113. 988.144-23" readonly>
+                    <button class="btn-copy-pix" onclick="copyPixKey()">
+                        <i class="fas fa-copy"></i> Copiar PIX
+                    </button>
+                </div>
+            </div>
             
         </header>
 
@@ -1052,12 +1069,19 @@
             btn.disabled = true;
             btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processando...';
 
+            if (!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL === 'SUA_URL_AQUI') {
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fas fa-check"></i> Confirmar';
+                showPageToast('A URL do Google Apps Script não foi configurada pelo organizador.');
+                return;
+            }
+
             // RACE CONDITION: Antes de POST, fazer GET para verificar se ainda está disponível
             fetch(GOOGLE_SCRIPT_URL)
                 .then(function(response) { return response.json(); })
                 .then(function(data) {
                     if (!data.success || !data.items) {
-                        throw new Error('Erro ao verificar disponibilidade');
+                        throw new Error('Não foi possível conectar à planilha.');
                     }
 
                     var freshGift = data.items.find(function(g) {
@@ -1065,7 +1089,10 @@
                     });
 
                     if (!freshGift) {
-                        throw new Error('Presente não encontrado');
+                        btn.disabled = false;
+                        btn.innerHTML = '<i class="fas fa-check"></i> Confirmar';
+                        showPageToast('Presente não encontrado na planilha. Copie o novo código no botão "Gerar Apps Script" e recrie/atualize o script no Google Sheets.');
+                        return;
                     }
 
                     if (freshGift.status === 'Escolhido') {
@@ -1106,15 +1133,15 @@
                             loadGifts();
                             document.getElementById('raceModal').classList.add('active');
                         } else {
-                            throw new Error(result.reason || 'Erro desconhecido');
+                            throw new Error(result.reason || 'Erro ao registrar presente.');
                         }
                     });
                 })
                 .catch(function(err) {
-                    console.error('Erro ao confirmar presente:', err);
+                    console.warn('Erro ao confirmar presente:', err);
                     btn.disabled = false;
                     btn.innerHTML = '<i class="fas fa-check"></i> Confirmar';
-                    showPageToast('Erro ao processar. Tente novamente.');
+                    showPageToast(err.message || 'Erro ao processar presente. Tente novamente.');
                 });
         }
 
